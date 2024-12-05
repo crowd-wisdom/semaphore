@@ -1,6 +1,5 @@
 {
     "name": "semaphore-contracts",
-    "private": true,
     "scripts": {
         "start": "hardhat node",
         "copy:abi": "ncp artifacts/contracts/Semaphore.sol/Semaphore.json ../utils/src/semaphore-interface.json",
