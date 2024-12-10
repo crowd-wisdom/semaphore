@@ -24,6 +24,10 @@ const hardhatConfig: HardhatUserConfig = {
         }
     },
     networks: {
+        localhost: {
+            url: "http://localhost:8545",
+            loggingEnabled: true
+        },
         hardhat: {
             chainId: 1337,
             allowUnlimitedContractSize: true

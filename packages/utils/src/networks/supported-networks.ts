@@ -70,5 +70,11 @@ export default {
         url: "https://sepolia-rpc.scroll.io",
         chainId: 534351,
         explorer: "https://sepolia.scrollscan.com"
+    },
+    localhost: {
+        name: "Hardat Localhost",
+        url: "http://localhost:8545",
+        chainId: 1337,
+        explorer: ""
     }
 }
