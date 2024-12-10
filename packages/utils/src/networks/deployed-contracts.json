@@ -240,7 +240,7 @@
         ]
     },
     {
-        "network": "localhost",
+        "network": "Prueba2",
         "contracts": [
             {
                 "name": "SemaphoreVerifier",
