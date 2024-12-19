@@ -476,6 +476,7 @@ describe("Semaphore", () => {
             const group = new Group(members)
 
             // Create a group and add 3 members.
+
             await semaphoreContract["createGroup(address)"](accountAddresses[0])
 
             const groupId = 2
@@ -484,12 +485,14 @@ describe("Semaphore", () => {
 
             await semaphoreContract.addMembers(groupId, members)
 
+
             // Remove the third member.
             {
                 group.removeMember(2)
                 const { siblings } = group.generateMerkleProof(2)
 
                 await semaphoreContract.removeMember(groupId, members[2], siblings)
+
             }
 
             // Update the second member.
@@ -504,7 +507,6 @@ describe("Semaphore", () => {
 
             const proof = await generateProof(identity, group, 42, group.root)
 
-            const transaction = await semaphoreContract.validateProof(groupId, proof)
 
             await expect(transaction)
                 .to.emit(semaphoreContract, "ProofValidated")
