@@ -581,69 +581,69 @@ describe("Semaphore", () => {
         })
     })
 
-    // describe("SemaphoreGroups", () => {
-    //     describe("# hasMember", () => {
-    //         it("Should return true because the member is part of the group", async () => {
-    //             const { semaphoreContract, accountAddresses, groupId } = await loadFixture(deploySemaphoreFixture)
+    describe("SemaphoreGroups", () => {
+        describe("# hasMember", () => {
+            it("Should return true because the member is part of the group", async () => {
+                const { semaphoreContract, accountAddresses, groupId } = await loadFixture(deploySemaphoreFixture)
 
-    //             const members = Array.from({ length: 3 }, (_, i) => new Identity(i.toString())).map(
-    //                 ({ commitment }) => commitment
-    //             )
+                const members = Array.from({ length: 3 }, (_, i) => new Identity(i.toString())).map(
+                    ({ commitment }) => commitment
+                )
 
-    //             await semaphoreContract["createGroup(address)"](accountAddresses[0])
-    //             await semaphoreContract.addMember(groupId, members[0])
+                await semaphoreContract["createGroup(address)"](accountAddresses[0])
+                await semaphoreContract.addMember(groupId, members[0])
 
-    //             const isMember = await semaphoreContract.hasMember(groupId, members[0])
+                const isMember = await semaphoreContract.hasMember(groupId, members[0])
 
-    //             await expect(isMember).to.be.true
-    //         })
+                await expect(isMember).to.be.true
+            })
 
-    //         it("Should return false because the member is not part of the group", async () => {
-    //             const { semaphoreContract, accountAddresses, groupId } = await loadFixture(deploySemaphoreFixture)
+            it("Should return false because the member is not part of the group", async () => {
+                const { semaphoreContract, accountAddresses, groupId } = await loadFixture(deploySemaphoreFixture)
 
-    //             await semaphoreContract["createGroup(address)"](accountAddresses[0])
+                await semaphoreContract["createGroup(address)"](accountAddresses[0])
 
-    //             const identity = new Identity()
-    //             const isMember = await semaphoreContract.hasMember(groupId, identity.commitment)
+                const identity = new Identity()
+                const isMember = await semaphoreContract.hasMember(groupId, identity.commitment)
 
-    //             await expect(isMember).to.be.false
-    //         })
-    //     })
+                await expect(isMember).to.be.false
+            })
+        })
 
-    //     describe("# indexOf", () => {
-    //         it("Should return the index of a member", async () => {
-    //             const { semaphoreContract, accountAddresses, groupId } = await loadFixture(deploySemaphoreFixture)
+        describe("# indexOf", () => {
+            it("Should return the index of a member", async () => {
+                const { semaphoreContract, accountAddresses, groupId } = await loadFixture(deploySemaphoreFixture)
 
-    //             const members = Array.from({ length: 3 }, (_, i) => new Identity(i.toString())).map(
-    //                 ({ commitment }) => commitment
-    //             )
+                const members = Array.from({ length: 3 }, (_, i) => new Identity(i.toString())).map(
+                    ({ commitment }) => commitment
+                )
 
-    //             await semaphoreContract["createGroup(address)"](accountAddresses[0])
-    //             await semaphoreContract.addMember(groupId, members[0])
+                await semaphoreContract["createGroup(address)"](accountAddresses[0])
+                await semaphoreContract.addMember(groupId, members[0])
 
-    //             const index = await semaphoreContract.indexOf(groupId, members[0])
+                const index = await semaphoreContract.indexOf(groupId, members[0])
 
-    //             await expect(index).to.equal(0)
-    //         })
-    //     })
+                await expect(index).to.equal(0)
+            })
+        })
 
-    //     describe("# getMerkleTreeDepth", () => {
-    //         it("Should return the merkle tree depth", async () => {
-    //             const { semaphoreContract, accountAddresses, groupId } = await loadFixture(deploySemaphoreFixture)
+        describe("# getMerkleTreeDepth", () => {
+            it("Should return the merkle tree depth", async () => {
+                const { semaphoreContract, accountAddresses, groupId } = await loadFixture(deploySemaphoreFixture)
 
-    //             const members = Array.from({ length: 3 }, (_, i) => new Identity(i.toString())).map(
-    //                 ({ commitment }) => commitment
-    //             )
+                const members = Array.from({ length: 3 }, (_, i) => new Identity(i.toString())).map(
+                    ({ commitment }) => commitment
+                )
 
-    //             await semaphoreContract["createGroup(address)"](accountAddresses[0])
-    //             await semaphoreContract.addMember(groupId, members[0])
-    //             await semaphoreContract.addMember(groupId, members[1])
-    //             await semaphoreContract.addMember(groupId, members[2])
+                await semaphoreContract["createGroup(address)"](accountAddresses[0])
+                await semaphoreContract.addMember(groupId, members[0])
+                await semaphoreContract.addMember(groupId, members[1])
+                await semaphoreContract.addMember(groupId, members[2])
 
-    //             const depth = await semaphoreContract.getMerkleTreeDepth(groupId)
+                const depth = await semaphoreContract.getMerkleTreeDepth(groupId)
 
-    //             await expect(depth).to.equal(2)
-    //         })
-    //     })
-    // })
+                await expect(depth).to.equal(2)
+            })
+        })
+    })
 })
