@@ -28,11 +28,19 @@
         "done": true
     },
     {
-        "name": "Semaphore Spec",
-        "done": false
+        "name": "Semaphore V4 Specification",
+        "done": true
     },
     {
         "name": "Semaphore Rust Implementation",
+        "done": true
+    },
+    {
+        "name": "Semaphore Noir Implementation",
+        "done": false
+    },
+    {
+        "name": "Scaling Semaphore with PIR",
         "done": false
     }
 ]

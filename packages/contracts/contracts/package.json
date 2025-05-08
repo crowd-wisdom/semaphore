@@ -1,6 +1,6 @@
 {
     "name": "@semaphore-protocol/contracts",
-    "version": "4.9.0",
+    "version": "4.10.0",
     "description": "Semaphore contracts to manage groups and broadcast anonymous signals.",
     "license": "MIT",
     "files": [
@@ -30,6 +30,6 @@
         "access": "public"
     },
     "dependencies": {
-        "@zk-kit/lean-imt.sol": "2.0.0"
+        "@zk-kit/lean-imt.sol": "2.0.1"
     }
 }
